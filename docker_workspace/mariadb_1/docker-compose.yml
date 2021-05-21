@@ -1,0 +1,11 @@
+version: "3.1"
+services:
+  mariadb:  # --name에 해당. container 이름
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: msa
+    volumes:  # 컨테이너 삭제되면 DB삭제되는 문제 관련
+      #- mariadb_home:/var/lib/mysql # service "mariadb" refers to undefined volume mariadb_home: invalid compose project
+      - ./mariadb_home:/var/lib/mysql

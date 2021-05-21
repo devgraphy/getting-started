@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8">
+        <script defer src="./js/projectlist.js">
+        </script>
+        <style>
+            body{
+                text-align: center;
+            }
+            table, th, td {
+                border: 1px solid black;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h1> Project list</h1>
+        <table style="width:100%">
+            <tr>
+              <th>선택</th>
+              <th>프로젝트명</th> 
+            </tr>
+            <tr>
+                <td><input type="radio" id="p001" name="check" value="hr" onchange="callExpl(id)"></td>
+              <td>전자인사관리시스템</td>
+              
+            </tr>
+            <tr>
+                <td><input type="radio" id="p002" name="check" value="book" onchange="callExpl(id)"></td>
+              <td>도서관리시스템</td>
+            </tr>
+            <tr>
+                <td><input type="radio" id="p003" name="check" value="iaas" onchange="callExpl(id)"></td>
+              <td>IaaS 서비스</td>
+            </tr>
+            <tr>
+                <td><input type="radio" id="p004" name="check" value="paas" onchange="callExpl(id)"></td>
+                <td>PaaS 서비스</td>
+            </tr>
+            <tr>
+                <td><input type="radio" id="p005" name="check" value="saas" onchange="callExpl(id)"></td>
+                <td>SaaS 서비스</td>
+            </tr>
+        
+          </table>
+        <div id="pjt"> 
+            <div>프로젝트 번호 <input id="pjt_num" name="pjt_num" style="width:500px; "></div>
+            <div>프로젝트 이름 <input id="pjt_name" name="pjt_name" style="width:500px; "></div>
+            <div>프로젝트 설명 <input id="pjt_expl" name="pjt_expl" style="width:500px; height:100px" ></div>
+
+        </div>
+    </body>
+</html>

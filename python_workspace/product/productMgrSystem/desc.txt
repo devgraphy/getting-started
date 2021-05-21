@@ -1,0 +1,17 @@
+ProductMgrSystem
+    |--main.py(테스트)
+    |--view
+        |--view.py (menu_display, input_display, list_display,...)
+    |--entity (1)
+        |-- product.py(class Product : p_id, p_name, price(int), description)
+    |--controller(4)
+        |-- product_controller.py(class ProductController)
+    |--service (3)
+        |-- product_service.py(class ProductService)
+    |--dao (2)
+        |-- product_file.py(file_read, file_write)
+    |--exception
+        |--exception.py(class DuplicationException, class RecordNotFoundException)
+
+
+        

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+        
+    </head>
+    <body>
+        <h1>jQuery Example</h1>
+        <a href="http://jquery.com">jQuery</a>
+        <button id="alertButton">Alert!</button>
+        <div id="data"></div>
+        <script>
+            $(document).ready(function(){
+                $("a").click(function(event){   //보통은 요소 이름보다는 id/class 명을 사용
+                    alert("The link will no longer take you to jquery.com");
+                    event.preventDefault();//이벤트를 안 주더라도 a링크는 자동으로 링크가 넘어가는데 이걸 막음
+                })
+            }); //뜨면 jquery 쓸수 있는 준비가 된 것
+
+
+
+            $(document).ready(function(){
+                $("alertButton").on("click")
+            })
+        </script>
+    </body>
+</html>

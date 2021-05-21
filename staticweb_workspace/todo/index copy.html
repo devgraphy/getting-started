@@ -1,0 +1,162 @@
+<!--https://vuejstodo-aa185.firebaseapp.com/-->
+<!--CSS 안 입힌 TODOLIST-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!--모든 과정에서 encoding을 utf-8로 통일하는것을 권장-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </link>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"></link>
+    <!--WellFormed 규칙 준수-->
+    <script>
+        let todos = [{
+            todoNum: 1,
+            title: "일정1"
+        },{
+            todoNum: 2,
+            title: "일정2"
+        },{
+            todoNum: 3,
+            title: "일정3"
+        },{
+            todoNum: 4,
+            title: "일정4"
+        },{
+            todoNum: 5,
+            title: "일정5"
+        }];
+
+    </script>
+    <script defer src="./js/todo.js"></script>
+    <title>일정관리</title>
+
+
+<style type="text/css">
+    body{text-align:center;background-color:#f6f6f8}
+    input{width:200px;}
+    button,input{border-style:groove}
+    .shadow{box-shadow:5px 10px 10px rgba(0,0,0,.03)}
+</style>
+<style type="text/css">
+    header{
+        color:#2f3b52;
+        font-weight:900;
+        margin:2.5rem 0 1.5rem;
+    }
+    header {
+        display: block;
+        font-size: 2em;
+        margin-block-start: 0.67em;
+        margin-block-end: 0.67em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+    }
+</style>
+<style type="text/css">
+    input:focus{outline:none}
+    input {
+        -webkit-writing-mode: horizontal-tb !important;
+        text-rendering: auto;
+        color: -internal-light-dark(black, white);
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        display: inline-block;
+        text-align: start;
+        appearance: textfield;
+        background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+        -webkit-rtl-ordering: logical;
+        cursor: text;
+        margin: 0em;
+        font: 400 13.3333px Arial;
+        border-width: 2px;
+        border-style: inset;
+        border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+        border-image: initial;
+        border-radius: 2px;
+    }
+    .inputBox{background:#fff;height:50px;line-height:50px;border-radius:5px}
+    .inputBox input{
+        border-style:none;
+        font-size:.9rem;
+    }
+    .addContainer{float:right;background:linear-gradient(90deg,#6478fb,#8763fb);display:inline-block;width:3rem;border-radius:0 5px 5px 0}
+    .addBtn{color:#fff;vertical-align:middle}
+</style>
+<style type="text/css">
+    ul{list-style-type:none;padding-left:0;margin-top:0;text-align:left}
+    li{display:flex;min-height:50px;height:50px;line-height:50px;margin:.5rem 0;padding:0 .9rem;background:#fff;border-radius:5px}
+    .checkBtn{line-height:45px; color:#62acde; margin-right:5px}
+    .removeBtn{margin-left:auto;color:#de4343}
+    
+    .list-item{display:inline-block;margin-right:10px}
+    .list-move{transition:transform 1s}
+    .list-enter-active,.list-leave-active{transition:all 1s}
+    .list-enter,.list-leave-to{opacity:0;transform:translateY(30px)}
+</style>
+<style type="text/css">
+    .clearAllContainer{
+        width:8.5rem;
+        height:50px;
+        line-height:50px;
+        background-color:#fff;
+        border-radius:5px;
+        margin:0 auto;
+        }
+    .clearAllBtn{
+        color:#e20303;
+        display:block;
+        font-weight:900;
+    }
+</style>
+
+
+</head>
+<body>
+    <!--title-->
+    <header>TODO it!</header>
+    <!--todo input-->
+    <div class="inputBox shadow">
+        <form>
+            <input type="text" placeholder="일정을 입력하세요" />
+            <span class="addContainer" onclick="">
+                <i aria-hidden="true" class="addBtn fa fa-plus">
+                    <!--::before 는 가상요소임-->
+                </i>
+                <!--bootstrap에서 가져옴-->
+
+            </span>
+        </form>
+    </div>
+    <!--todo list-->
+    <selction>
+        <ul id="todoList">
+            <script>
+                //const todoList = document.getElementById("todoList");
+                todos.forEach(todo=>{
+                    //DOM객체의 메서드를 사용해도 되네??, todoList는 태그 id
+                    todoList.innerHTML+=`
+                    <li class="shadow">
+                        <i aria-hidden="true" class="checkBtn fa fa-check"></i>
+                        ${todo.title}
+                        <span type="button" class="removeBtn">
+                            <i aria-hidden="true" class="fa fa-trash-o"></i>
+                        </span>
+                    </li>`
+                });
+            </script>
+        </ul>
+    </selction>
+    <!--clear all-->
+    <div class="clearAllContainer">
+        <span class="clearAllBtn">Clear All</span>
+    </div>
+</body>
+
+</html>
